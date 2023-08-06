@@ -1,0 +1,55 @@
+.flex {
+  display: flex;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+.grid {
+  display: grid;
+}
+.justify-end {
+  justify-content: end;
+}
+.gap-1 {
+  gap: 1rem;
+}
+.flex-20 {
+  flex-basis: 20rem;
+}
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+.item-active {
+  background-color: cornflowerblue;
+  color: white !important;
+}
+.item-pending {
+  background-color: darkgrey;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.block {
+  display: block;
+}
+.p-1 {
+  padding: 1rem;
+}
+.px-1 {
+  padding: 0 1rem;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.color-black {
+  color: black;
+}
