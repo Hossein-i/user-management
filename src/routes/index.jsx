@@ -6,7 +6,7 @@ const IndexPage = () => {
     <div>
       <h1>Choose a user</h1>
       <p>
-        or add <Link to="/users/new">new user</Link>
+        or add <Link className="text-sky-500" to="/users/new">new user</Link>
       </p>
     </div>
   );

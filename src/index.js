@@ -8,7 +8,12 @@ import ErrorPage from "./error-page";
 import { store } from "./redux/store";
 import IndexPage from "./routes";
 import RootPage from "./routes/root";
-import { DestroyUserPage, EditUserPage, NewUserPage, UserPage } from "./routes/users";
+import {
+  DestroyUserPage,
+  EditUserPage,
+  NewUserPage,
+  UserPage,
+} from "./routes/users";
 
 const router = createBrowserRouter([
   {

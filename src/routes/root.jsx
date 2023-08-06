@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { fetchUsers, selectAllUsers } from "../redux/slices/UsersSlice";
+import { Input, SecondaryButton } from "../components";
 
 const RootPage = () => {
   const navigate = useNavigate();
@@ -15,11 +16,10 @@ const RootPage = () => {
   }, []);
 
   return (
-    <div className="flex gap-1">
-      <div>
-        <div className="grid gap-1">
-          <input
-            className="p-1"
+    <div className="flex gap-4 p-4">
+      <div className="grid content-start gap-4">
+        <div className="grid gap-4">
+          <Input
             type="search"
             name="q"
             id="q"
@@ -27,18 +27,16 @@ const RootPage = () => {
             defaultValue={search}
             onChange={(event) => setSearch(event.target.value)}
           />
-          <button
-            type="button"
-            className="p-1"
+          <SecondaryButton
             onClick={() => {
               navigate("/users/new");
             }}
           >
             New User
-          </button>
+          </SecondaryButton>
         </div>
         <div>
-          <ul>
+          <ul className="overflow-y-auto">
             {users &&
               users
                 .filter((user) =>
@@ -51,13 +49,9 @@ const RootPage = () => {
                   <li key={user.id}>
                     <NavLink
                       to={`/users/${user.id}`}
-                      className={({ isActive, isPending }) =>
-                        `text-decoration-none block p-1 color-black ${
-                          isActive
-                            ? "item-active"
-                            : isPending
-                            ? "item-pending"
-                            : ""
+                      className={({ isActive }) =>
+                        `block px-4 py-2 rounded-lg hover:opacity-75 ${
+                          isActive ? "bg-sky-500 text-white" : ""
                         }`
                       }
                     >
@@ -68,7 +62,7 @@ const RootPage = () => {
           </ul>
         </div>
       </div>
-      <div className="flex-auto">
+      <div>
         <Outlet />
       </div>
     </div>
