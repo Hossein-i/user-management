@@ -1,4 +1,4 @@
-import UserIcon from "../../assets/icons/user-icon.png";
+// import UserIcon from "../../assets/icons/user-icon.png";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
