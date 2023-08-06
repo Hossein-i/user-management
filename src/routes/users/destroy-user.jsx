@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { removeUser } from "../redux/slices/UsersSlice";
+import { removeUser } from "../../redux/slices/UsersSlice";
 
-const DestroyUser = () => {
+const DestroyUserPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -16,4 +16,4 @@ const DestroyUser = () => {
   return null;
 };
 
-export default DestroyUser;
+export default DestroyUserPage;

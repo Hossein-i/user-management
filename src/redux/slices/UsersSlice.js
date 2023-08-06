@@ -21,20 +21,21 @@ export const fetchUsers = createAsyncThunk(
 // });
 
 export const createUser = createAsyncThunk("users/createOne", async (args) => {
-  await axios.post("https://reqres.in/api/users", args);
-  return args;
+  // await axios.post("https://reqres.in/api/users", args);
+  const id = Date.now();
+  return { id, ...args };
 });
 
 export const updateUser = createAsyncThunk(
   "users/updateOne",
   async ({ id, ...args }) => {
-    await axios.put(`https://reqres.in/api/users/${id}`, args);
+    // await axios.put(`https://reqres.in/api/users/${id}`, args);
     return { id, ...args };
   }
 );
 
 export const removeUser = createAsyncThunk("users/removeOne", async (id) => {
-  await axios.delete(`https://reqres.in/api/users/${id}`);
+  // await axios.delete(`https://reqres.in/api/users/${id}`);
   return id;
 });
 

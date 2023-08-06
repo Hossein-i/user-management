@@ -7,11 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./error-page";
 import { store } from "./redux/store";
 import IndexPage from "./routes";
-import DestroyUser from "./routes/destroy-user";
-import UserEditPage from "./routes/edit-user";
 import RootPage from "./routes/root";
-import UserPage from "./routes/user";
-import NewUser from "./routes/new-user";
+import { DestroyUserPage, EditUserPage, NewUserPage, UserPage } from "./routes/users";
 
 const router = createBrowserRouter([
   {
@@ -20,29 +17,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            index: true,
-            element: <IndexPage />,
-          },
-          {
-            path: "/users/new",
-            element: <NewUser />,
-          },
-          {
-            path: "/users/:userId",
-            element: <UserPage />,
-          },
-          {
-            path: "/users/:userId/edit",
-            element: <UserEditPage />,
-          },
-          {
-            path: "/users/:userId/destroy",
-            element: <DestroyUser />,
-          },
-        ],
+        index: true,
+        element: <IndexPage />,
+      },
+      {
+        path: "/users/new",
+        element: <NewUserPage />,
+      },
+      {
+        path: "/users/:userId",
+        element: <UserPage />,
+      },
+      {
+        path: "/users/:userId/edit",
+        element: <EditUserPage />,
+      },
+      {
+        path: "/users/:userId/destroy",
+        element: <DestroyUserPage />,
       },
     ],
   },

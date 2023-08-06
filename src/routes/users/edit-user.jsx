@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { selectUserById, updateUser } from "../redux/slices/UsersSlice";
+import { selectUserById, updateUser } from "../../redux/slices/UsersSlice";
 
-const UserEditPage = () => {
+const EditUserPage = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
   const user = useSelector((state) => selectUserById(state, userId));
@@ -35,7 +35,7 @@ const UserEditPage = () => {
         alt={[body.first_name, body.last_name].join(" ")}
       />
       <input type="file" accept="image/*" name="avatar" id="avatar" /> */}
-      <label htmlFor="first_name" className="flex-20 grid">
+      <label htmlFor="first_name" className="flex-15 grid">
         <span>First Name</span>
         <input
           className="p-1"
@@ -46,7 +46,7 @@ const UserEditPage = () => {
           onChange={handleInputChanges}
         />
       </label>
-      <label htmlFor="last_name" className="flex-20 grid">
+      <label htmlFor="last_name" className="flex-15 grid">
         <span>Last Name</span>
         <input
           className="p-1"
@@ -57,7 +57,7 @@ const UserEditPage = () => {
           onChange={handleInputChanges}
         />
       </label>
-      <label htmlFor="email" className="flex-20 grid">
+      <label htmlFor="email" className="flex-15 grid">
         <span>Email</span>
         <input
           className="p-1"
@@ -69,7 +69,7 @@ const UserEditPage = () => {
         />
       </label>
 
-      <div className="flex-20 flex gap-1">
+      <div className="flex-15 flex items-end gap-1">
         <button type="submit" className="p-1">
           Save
         </button>
@@ -89,4 +89,4 @@ const UserEditPage = () => {
   );
 };
 
-export default UserEditPage;
+export default EditUserPage;

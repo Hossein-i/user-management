@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createUser } from "../redux/slices/UsersSlice";
+import { createUser } from "../../redux/slices/UsersSlice";
 
-const NewUser = () => {
+const NewUserPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [body, setBody] = useState({});
@@ -19,7 +19,7 @@ const NewUser = () => {
       return { ...value, ...{ [event.target.name]: event.target.value } };
     });
   };
-  
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-wrap gap-1">
       {/* upload file */}
@@ -29,7 +29,7 @@ const NewUser = () => {
         alt={[body.first_name, body.last_name].join(" ")}
       />
       <input type="file" accept="image/*" name="avatar" id="avatar" /> */}
-      <label htmlFor="first_name" className="flex-20 grid">
+      <label htmlFor="first_name" className="flex-15 grid">
         <span>First Name</span>
         <input
           className="p-1"
@@ -40,7 +40,7 @@ const NewUser = () => {
           onChange={handleInputChanges}
         />
       </label>
-      <label htmlFor="last_name" className="flex-20 grid">
+      <label htmlFor="last_name" className="flex-15 grid">
         <span>Last Name</span>
         <input
           className="p-1"
@@ -51,7 +51,7 @@ const NewUser = () => {
           onChange={handleInputChanges}
         />
       </label>
-      <label htmlFor="email" className="flex-20 grid">
+      <label htmlFor="email" className="flex-15 grid">
         <span>Email</span>
         <input
           className="p-1"
@@ -63,7 +63,7 @@ const NewUser = () => {
         />
       </label>
 
-      <div className="flex-20 flex gap-1">
+      <div className="flex-15 flex items-end gap-1">
         <button type="submit" className="p-1">
           Save
         </button>
@@ -81,4 +81,4 @@ const NewUser = () => {
   );
 };
 
-export default NewUser;
+export default NewUserPage;

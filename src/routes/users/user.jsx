@@ -1,7 +1,8 @@
+import UserIcon from "../../assets/icons/user-icon.png";
+
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { selectUserById } from "../redux/slices/UsersSlice";
-import { useEffect } from "react";
+import { selectUserById } from "../../redux/slices/UsersSlice";
 
 const UserPage = () => {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ const UserPage = () => {
   return user ? (
     <div className="flex flex-wrap gap-1">
       <img
-        className="flex-20"
-        src={user.avatar}
+        className="w-15 rounded"
+        src={user.avatar || UserIcon}
         alt={[user.first_name, user.last_name].join(" ")}
       />
       <div>

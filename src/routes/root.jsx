@@ -28,7 +28,7 @@ const RootPage = () => {
   return (
     <div className="flex gap-1">
       <div>
-        <div className="flex">
+        <div className="grid gap-1">
           <input
             className="p-1"
             type="search"

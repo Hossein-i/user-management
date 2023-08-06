@@ -16,11 +16,20 @@
 .justify-end {
   justify-content: end;
 }
+.items-end {
+  align-items: end;
+}
 .gap-1 {
   gap: 1rem;
 }
-.flex-20 {
-  flex-basis: 20rem;
+.flex-15 {
+  flex-basis: 15rem;
+}
+.w-15 {
+  width: 15rem;
+}
+.rounded {
+  border-radius: 7.5rem;
 }
 ul {
   padding: 0;
