@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { createUser } from "../../redux/slices/UsersSlice";
 
 const NewUserPage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [body, setBody] = useState({});
 
   const handleSubmit = (event) => {

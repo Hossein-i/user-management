@@ -1,24 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Form,
-  NavLink,
-  Outlet,
-  useNavigate,
-  useNavigation,
-} from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { fetchUsers, selectAllUsers } from "../redux/slices/UsersSlice";
 
 const RootPage = () => {
-  const users = useSelector(selectAllUsers);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const users = useSelector(selectAllUsers);
   const [search, setSearch] = useState("");
-
-  //   const searching =
-  //     navigation.location &&
-  //     new URLSearchParams(navigation.location.search).has("q");
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -79,11 +68,7 @@ const RootPage = () => {
           </ul>
         </div>
       </div>
-      <div
-        className={`${
-          navigation.state === "loading" ? "loading" : ""
-        } flex-auto`}
-      >
+      <div className="flex-auto">
         <Outlet />
       </div>
     </div>

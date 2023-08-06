@@ -48,6 +48,9 @@ const initialState = usersAdapter.getInitialState();
 export const usersSlice = createSlice({
   name: "users",
   initialState,
+  reducers:{
+
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.fulfilled, usersAdapter.upsertMany);
     builder.addCase(createUser.fulfilled, usersAdapter.addOne);

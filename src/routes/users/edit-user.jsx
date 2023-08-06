@@ -4,10 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { selectUserById, updateUser } from "../../redux/slices/UsersSlice";
 
 const EditUserPage = () => {
-  const { userId } = useParams();
   const navigate = useNavigate();
-  const user = useSelector((state) => selectUserById(state, userId));
+  const { userId } = useParams();
   const dispatch = useDispatch();
+  const user = useSelector((state) => selectUserById(state, userId));
   const [body, setBody] = useState({});
 
   useEffect(() => {
